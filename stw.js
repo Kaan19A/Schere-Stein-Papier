@@ -1,4 +1,9 @@
 
+let humanScore = 0
+let computerScore = 0
+
+
+
 function getComputerchoice() {
 
     let zufall = Math.floor(Math.random() * 3);
@@ -30,3 +35,15 @@ function getHumanChoice() {
 }
 
 console.log(getHumanChoice());
+
+function playRound(humanChoice,computerChoice) {
+    
+    humanChoice = humanChoice.ToLowerCase();
+
+    computerChoice = computerChoice.ToLowerCase()
+   
+    if(humanChoice == computerChoice){
+        console.log("Unentschieden");
+        
+    }
+}

@@ -1,9 +1,3 @@
-
-let humanScore = 0
-let computerScore = 0
-
-
-
 function getComputerChoice() {
 
     let zufall = Math.floor(Math.random() * 3);
@@ -28,16 +22,23 @@ function getHumanChoice() {
     let eingabe = prompt("Bitte um eingabe");
 
     if (eingabe == null) {
-        return ("du hast auf Abbrechen geklickt");
-
+        return null;   
     }
-    return eingabe
+    return eingabe;
 }
 
 console.log(getHumanChoice());
 
+let humanScore = 0
+let computerScore = 0
+
 function playRound(humanChoice, computerChoice) {
 
+    if (humanChoice === null){
+        console.log("Spieler hat abgebrochen");
+        return
+    }
+    
     humanChoice = humanChoice.toLowerCase();
     computerChoice = computerChoice.toLowerCase();
 
@@ -47,7 +48,8 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
         console.log("Unentschieden");
         return;
-    }
+    
+}
     else if (
         (humanChoice === "stein" && computerChoice === "schere") ||
         (humanChoice === "papier" && computerChoice === "stein") ||
@@ -66,15 +68,13 @@ function playRound(humanChoice, computerChoice) {
         console.log("Copmuter Gewinnt Runde");
 
     }
+}
     for (let i = 0; i < 5; i++) {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
     }
 
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
+   
 
-    playRound(humanSelection, computerSelection);
-}
 console.log("Finaler Score: Mensch" + humanScore + " computer" + computerScore);;

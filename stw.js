@@ -49,9 +49,9 @@ function playRound(humanChoice, computerChoice) {
         return;
     }
     else if (
-        (human === "rock" && computer === "scissors") ||
-        (human === "paper" && computer === "rock") ||
-        (human === "scissors" && computer === "paper")
+        (human === "stein" && computer === "schere") ||
+        (human === "papier" && computer === "stein") ||
+        (human === "schere" && computer === "papier")
     ) {
         humanScore++
         console.log("Mensch gewinnt Runde");

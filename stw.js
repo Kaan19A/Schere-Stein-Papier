@@ -49,14 +49,19 @@ function playRound(humanChoice, computerChoice) {
         return;
     }
     else if (
-        (human === "stein" && computer === "schere") ||
-        (human === "papier" && computer === "stein") ||
-        (human === "schere" && computer === "papier")
+        (humanChoice === "stein" && computerChoice === "schere") ||
+        (humanChoice === "papier" && computerChoice === "stein") ||
+        (humanChoice === "schere" && computerChoice === "papier")
     ) {
         humanScore++
         console.log("Mensch gewinnt Runde");
     }
-    else {
+    else if (
+        (computerChoice === "stein" && humanChoice === "schere") ||
+        (computerChoice === "papier" && humanChoice === "stein") ||
+        (computerChoice === "schere" && humanChoice === "papier"))  
+       
+        {
         computerScore++
         console.log("Copmuter Gewinnt Runde");
 
